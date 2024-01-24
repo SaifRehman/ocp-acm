@@ -1,0 +1,31 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: 'test'
+  namespace: 'test'
+  labels:
+    cloud: 'AWS'
+    region: 'us-east-1'
+    vendor: OpenShift
+    cluster.open-cluster-management.io/clusterset: 'default'
+spec:
+  baseDomain: dkr62.sandbox2406.opentlc.com
+  clusterName: 'test'
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 1
+  installed: false
+  platform:
+    aws:
+      credentialsSecretRef:
+        name: test-aws-creds
+      region: us-east-1
+  provisioning:
+    installConfigSecretRef:
+      name: test-install-config
+    sshPrivateKeySecretRef:
+      name: test-ssh-private-key
+    imageSetRef:
+      name: img4.14.10-multi-appsub
+  pullSecretRef:
+    name: test-pull-secret
