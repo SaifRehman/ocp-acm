@@ -9,7 +9,7 @@ metadata:
     vendor: OpenShift
     cluster.open-cluster-management.io/clusterset: 'default'
 spec:
-  baseDomain: dkr62.sandbox2406.opentlc.com
+  baseDomain: dkr69.sandbox2406.opentlc.com
   clusterName: 'test'
   controlPlaneConfig:
     servingCertificates: {}
